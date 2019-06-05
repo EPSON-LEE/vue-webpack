@@ -1,11 +1,13 @@
+// webpack.demo.js
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: path.join(__dirname, '../src/main.js'),
+  entry: path.join(__dirname, '../example/main.js'),
   output: {
     filename: 'bundle.js',
+    // publicPath: '/dev/',
     path: path.join(__dirname, '../dist')
   },
   plugins: [
@@ -26,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['vue-style-loader', 'css-loader', 'postcss-loader']
+        loaders: ['vue-style-loader', 'css-loader']
       },
       {
         test: /\.scss$/,
@@ -35,24 +37,11 @@ module.exports = {
       {
         test: /\.js$/,
         use: ['babel-loader']
-      },
-      {
-        test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader'
-          },
-          {
-            loader: 'vue-markdown-loader/lib/markdown-compiler',
-            options: {
-              raw: true
-            }
-          }
-        ]
       }
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       vue: 'vue/dist/vue.esm.js'
     }
