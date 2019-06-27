@@ -3,7 +3,7 @@
 		<div class="main-header">
 			<div class="main-header-logo">
 			</div>
-			<div class="main-header-title">Vue-UI-Docs</div>
+			<div class="main-header-title">BRICKS</div>
 			<ul class="main-header-nav">
 				<li class="active">组件</li>
 			</ul>
@@ -17,6 +17,9 @@
 					</li>
 					<li>
 						<router-link to="/button">button 组件</router-link>
+					</li>
+          <li>
+						<router-link to="/boom">爆炸组件</router-link>
 					</li>
 				</ul>
 			</div>

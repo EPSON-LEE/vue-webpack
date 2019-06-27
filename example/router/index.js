@@ -9,6 +9,16 @@ export default new Router({
       path: '/button',
       name: 'button',
       component: r => require.ensure([], () => r(require('../docs/button.md')))
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: r => require.ensure([], () => r(require('../docs/test.md')))
+    },
+    {
+      path: '/boom',
+      name: 'boom',
+      component: r => require.ensure([], () => r(require('../docs/boom.md')))
     }
   ]
 })
